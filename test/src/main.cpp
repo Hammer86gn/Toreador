@@ -14,17 +14,8 @@ namespace test {
     public:
         TestApplication() : toreador::Application( "Test Game", settings )
         {
+            PRINT_DEBUG();
             std::cout << "Created Test Game\n";
-
-            std::cout << "------ [DEBUG INFO] ------\n"
-                      << "GPU: \n"
-                      << "    Vendor: " << toreador::utils::getGraphicsVendor() << "\n"
-                      << "    Renderer: " << toreador::utils::getGraphicsRenderer() << "\n"
-                      << "System: \n"
-                      << "    OS: " << toreador::utils::getOSName() << "\n"
-                      << "    Running Path: " << toreador::utils::getRunningPath() << "\n"
-                      << "------ [DEBUG INFO] ------\n";
-
         }
     };
 }// namespace test
