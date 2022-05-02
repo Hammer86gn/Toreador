@@ -15,3 +15,5 @@ add_library(Toreador SHARED src/Toreador/Core/Application/Application.cpp includ
 target_include_directories(Toreador PUBLIC include)
 target_link_libraries(Toreador glfw)
 target_link_libraries(Toreador glad)
+
+add_subdirectory(test)
