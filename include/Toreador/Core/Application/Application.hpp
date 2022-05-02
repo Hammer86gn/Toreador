@@ -32,6 +32,8 @@ namespace toreador {
         GLFWwindow* m_window;
     };
 
+    Application* createApplication(int argc, const char** argv);
+
 }
 
 #endif// TOREADOR_APPLICATION_HPP
