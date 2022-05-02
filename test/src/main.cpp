@@ -14,7 +14,7 @@ namespace test {
     public:
         TestApplication() : toreador::Application( "Test Game", settings )
         {
-            PRINT_DEBUG();
+            TOREADOR_PRINT_DEBUG();
             std::cout << "Created Test Game\n";
         }
     };

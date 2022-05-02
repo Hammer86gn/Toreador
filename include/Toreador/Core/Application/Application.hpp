@@ -23,6 +23,10 @@ namespace toreador {
         Application(const std::string& name, ApplicationSettings settings);
         ~Application();
 
+        GLFWwindow* getWindow();
+
+        bool useVSync();
+
     private:
         void setupApplication();
 

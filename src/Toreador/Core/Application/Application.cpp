@@ -48,3 +48,13 @@ void toreador::Application::setupApplication()
 
     glViewport( 0, 0, this->m_settings.width, this->m_settings.height );
 }
+
+GLFWwindow* toreador::Application::getWindow()
+{
+    return this->m_window;
+}
+
+bool toreador::Application::useVSync()
+{
+    return this->m_settings.vsync;
+}

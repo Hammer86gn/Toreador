@@ -12,7 +12,7 @@ namespace toreador {
         std::string getGraphicsVendor();
         std::string getGraphicsRenderer();
 
-#define PRINT_DEBUG() std::cout << "------ [DEBUG INFO] ------\n" \
+#define TOREADOR_PRINT_DEBUG() std::cout << "------ [DEBUG INFO] ------\n" \
                                 << "GPU: \n" \
                                 << "    Vendor: " << toreador::utils::getGraphicsVendor() << "\n" \
                                 << "    Renderer: " << toreador::utils::getGraphicsRenderer() << "\n" \
