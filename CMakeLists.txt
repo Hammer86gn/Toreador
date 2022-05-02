@@ -11,7 +11,8 @@ include_directories(include)
 include_directories(libs/glfw/include)
 include_directories(libs/glad/include)
 
-add_library(Toreador SHARED src/Toreador/Core/Application/Application.cpp include/Toreador/Core/Application/EntryPoint.hpp) #CPP files only
+add_library(Toreador SHARED src/Toreador/Core/Application/Application.cpp include/Toreador/Core/Application/EntryPoint.hpp
+        src/Toreador/Core/Math/Vector/Vector2.cpp src/Toreador/Core/Math/Vector/Vector3.cpp src/Toreador/Core/Math/Vector/Vector4.cpp) #CPP files only
 target_include_directories(Toreador PUBLIC include)
 target_link_libraries(Toreador glfw)
 target_link_libraries(Toreador glad)
