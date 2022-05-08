@@ -14,7 +14,8 @@ include_directories(libs/glad/include)
 add_library(Toreador SHARED src/Toreador/Core/Application/Application.cpp include/Toreador/Core/Application/EntryPoint.hpp
         src/Toreador/Core/Math/Vector/Vector2.cpp src/Toreador/Core/Math/Vector/Vector3.cpp
         src/Toreador/Core/Math/Vector/Vector4.cpp src/Toreador/Core/Math/Matrix/Matrix2x2.cpp
-        src/Toreador/Core/Math/Matrix/Matrix3x3.cpp src/Toreador/Utils/System.cpp) #CPP files only
+        src/Toreador/Core/Math/Matrix/Matrix3x3.cpp src/Toreador/Utils/System.cpp src/Toreador/Renderer/Core/Shader.cpp
+        src/Toreador/Renderer/Core/GPUMemoryBuffer.cpp ) #CPP files only
 target_include_directories(Toreador PUBLIC include)
 target_link_libraries(Toreador glfw)
 target_link_libraries(Toreador glad)

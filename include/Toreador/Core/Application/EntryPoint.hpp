@@ -15,6 +15,8 @@ int main( int argc, const char** argv )
         glfwMakeContextCurrent(game->getWindow());
         glClear(GL_COLOR_BUFFER_BIT);
 
+        game->onTestRender();
+
         if (game->useVSync()) {
             glfwSwapBuffers( game->getWindow() );
         }
