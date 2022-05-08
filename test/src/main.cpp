@@ -19,14 +19,10 @@ namespace test {
             TOREADOR_PRINT_DEBUG();
             std::cout << "Created Test Game\n";
 
-
+            this->setup();
         }
 
-        void onTestRender() override {
-            renderTest();
-        }
-
-        static void renderTest() {
+        void setup() {
             std::string vertexShaderSource = "#version 400 core\n"
                                              "layout (location = 0) in vec3 aPos;\n"
                                              "void main()\n"
@@ -35,11 +31,11 @@ namespace test {
                                              "}";
 
             std::string fragmentShaderSource = "#version 400 core\n"
-                                             "out vec4 FragColor;\n"
-                                             "void main()\n"
-                                             "{\n"
-                                             "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-                                             "}";
+                                               "out vec4 FragColor;\n"
+                                               "void main()\n"
+                                               "{\n"
+                                               "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+                                               "}";
 
             float vertices[] = {
                     0.5f,  0.5f, 0.0f, // top right
@@ -54,14 +50,20 @@ namespace test {
 
             toreador::render::Shader shader(vertexShaderSource, fragmentShaderSource);
 
-            auto* buffer = new toreador::render::GPUMemoryBuffer();
-            buffer->insertShader(shader);
-            buffer->upsertVertices(vertices);
-            buffer->upsertIndices(indices);
-            buffer->insertVertexAttribute({0, 3, toreador::render::VertexAttributeType::FLOAT});
-            buffer->draw(6);
-
+            this->buffer = new toreador::render::GPUMemoryBuffer();
+            this->buffer->insertShader(shader);
+            this->buffer->upsertVertices(vertices);
+            this->buffer->upsertIndices(indices);
+            this->buffer->insertVertexAttribute({0, 3, toreador::render::VertexAttributeType::FLOAT});
         }
+
+        void onTestRender() override {
+            this->buffer->draw(6);
+        }
+
+
+    private:
+        toreador::render::GPUMemoryBuffer* buffer;
     };
 }// namespace test
 

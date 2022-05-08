@@ -4,18 +4,14 @@
 
 toreador::render::Shader::Shader( std::string& vertexShader, std::string& fragmentShader )
 {
-    std::cout << "Creating Vertex Shader\n";
     unsigned int vertexShaderID = glCreateShader( GL_VERTEX_SHADER );
-    std::cout << "Setting Source\n";
     const char* srcV = vertexShader.c_str();
     glShaderSource( vertexShaderID, 1, &srcV, NULL );
-    std::cout << "Compiling Shader\n";
     glCompileShader( vertexShaderID );
 
     int success;
     char dump[1024];
     glGetShaderiv( vertexShaderID, GL_COMPILE_STATUS, &success );
-    std::cout << "Checked Compile status\n";
 
     if ( !success ) {
         int logLen;
